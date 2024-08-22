@@ -1,0 +1,11 @@
+env/
+whls/
+__pycache__/
+*.pyc
+*.whl
+*.db
+*.sqlite3
+*.pot
+*.log
+media/
+*.env

@@ -1,0 +1,13 @@
+upltimate-restapi-authentication
+> new project named django_rest_auth
+> new app called accounts
+> new app called social_accounts
+add apps to isntalled_apps: rest_framework, accounts, social_accounts, corsheaders
+> add cors middleware above common middleware
+> set up environment variables using django-environs (also .gitignore)
+> edit settings.py file accordingly (for environment variables)
+> add secret_key to .env file
+> update secret_key in settings.py
+> add debug to .env file
+> update debug in settings.py
+> update accounts/models.py and add custom user
