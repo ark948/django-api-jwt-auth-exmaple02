@@ -16,3 +16,8 @@ add apps to isntalled_apps: rest_framework, accounts, social_accounts, corsheade
 > add AUTH_USER_MODEL to settings.py
 > make and apply migrations
 > commit
+> create a superuser: admin1@gmail.com-henry-james-1
+> add user to admin.py in accounts
+> start the dev server and navigate to admin page
+> use email instead of username to login with the superuser
+> commit (bug fix - typing error)
