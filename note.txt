@@ -11,3 +11,8 @@ add apps to isntalled_apps: rest_framework, accounts, social_accounts, corsheade
 > add debug to .env file
 > update debug in settings.py
 > update accounts/models.py and add custom user
+> add managers.py file to accounts app folder
+> add user manager to managers.py in accounts app
+> add AUTH_USER_MODEL to settings.py
+> make and apply migrations
+> commit
