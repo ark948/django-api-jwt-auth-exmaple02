@@ -30,6 +30,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     def tokens(self):
         refresh = RefreshToken.for_user(self)
+        # use SimpleJWT to generate refresh and access tokens and return them
         return {
             'refresh': str(refresh),
             'access': str(refresh.access_token),

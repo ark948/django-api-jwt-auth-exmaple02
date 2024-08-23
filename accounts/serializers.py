@@ -33,8 +33,11 @@ class UserOTPSerializer(Serializer):
 
 
 class LoginSerializer(ModelSerializer):
+    # only email and password will be requested from user
+    # since they don't have read_only
     email = serializers.EmailField(max_length=225, min_length=6)
     password = serializers.CharField(max_length=68, write_only=True)
+    # password has write_only, because we don't want it returned with response (probably)
     full_name = serializers.CharField(max_length=225, read_only=True)
     access_token = serializers.CharField(max_length=225, read_only=True)
     refresh_token = serializers.CharField(max_length=225, read_only=True)
@@ -44,15 +47,21 @@ class LoginSerializer(ModelSerializer):
         fields = ['email', 'password', 'full_name', 'access_token', 'refresh_token']
 
     def validate(self, attrs):
+        # customizing the validate method of Model serializer
         email = attrs.get('email')
         password = attrs.get('password')
         request = self.context.get('request')
+        # get the request object, since we will need it for authentication
         user = authenticate(request, email=email, password=password)
+        # if authenticate run with no problem, it will return the user object
         if not user:
+            # if not user was returned, credentials was not valid
             raise AuthenticationFailed("invalid credentials, try again.")
         if not user.is_verified:
+            # user can be returned, but it may not have been verified
             raise AuthenticationFailed("email is not verified.")
         user_tokens = user.tokens()
+        # get access and refresh token from tokens method of custom user model
         
         return {
             'email': user.email,
