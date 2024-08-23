@@ -68,3 +68,8 @@ testuser2@gmail.com
 > test the route, (provide email, password only) (OK)
 http://localhost:8000/api/v1/auth/login/
 > committing
+> add a test view that must be accessible to logged in users only (will be called profile)
+http://localhost:8000/api/v1/auth/profile/
+> tested it with httpie (OK) (first aquire the access token with login route)
+> (then put it in bearer auth header and send a get to route)
+> committing
