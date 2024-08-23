@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
-from accounts.serializers import UserRegisterSerializer, UserOTPSerializer
+from accounts.serializers import UserRegisterSerializer, UserOTPSerializer, LoginSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from accounts.utils import send_code_to_user
@@ -45,3 +45,11 @@ class VerifyUserEmail(GenericAPIView):
             }, status=status.HTTP_204_NO_CONTENT)
         except OneTimePassword.DoesNotExist:
             return Response({'message': 'passcode not provided'}, status=status.HTTP_404_NOT_FOUND)
+
+class LoginUserView(GenericAPIView):
+    serializer_class = LoginSerializer
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+        

@@ -56,3 +56,15 @@ testuser2@gmail.com
 > can't remember admin, need a new superuser: shit234@gmail.com-al-do-1
 > is_verified is true for user testuser2@gmail.com, testing the same otp again to generate error
 > committing
+> add login user view to accounts/views.py
+> also add login serializer
+> update token method of user model (this requires simplejwt)
+> pip install djangorestframework-simplejwt
+> add configs for simplejwt to settings.py
+> add authentication config of rest_framework to settings.py as well
+> add simplejwt to isntalled_apps
+> we will use this package to generate tokens manually (for token method of user model)
+> add url for login
+> test the route, (provide email, password only) (OK)
+http://localhost:8000/api/v1/auth/login/
+> committing
