@@ -42,3 +42,17 @@ add apps to isntalled_apps: rest_framework, accounts, social_accounts, corsheade
 http://localhost:8000/api/v1/auth/register/
 > everything seems be ok, register came back ok, email was printed in console, and otp is there
 > committing
+> add VerifyUserEmail view to accounts/views.py
+> add url for it in accounts/urls.py
+> run server and test the route:
+http://localhost:8000/api/v1/auth/verify-email/
+> got error, (video did not get error):
+AssertionError:
+'VerifyUserEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+> think it needs a api view cannot work without a serializer
+> i need to implement this on my own
+testuser2@gmail.com
+> needed to register a new user, and get an otp, appears to be working, need to check the is verified field of user using admin
+> can't remember admin, need a new superuser: shit234@gmail.com-al-do-1
+> is_verified is true for user testuser2@gmail.com, testing the same otp again to generate error
+> committing
