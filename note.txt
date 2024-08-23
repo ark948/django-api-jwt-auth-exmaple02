@@ -32,3 +32,13 @@ add apps to isntalled_apps: rest_framework, accounts, social_accounts, corsheade
 > in accounts/utils.py, add generateOtp function (i think this will genereate a one time password)
 > add send_code_to_user function to accounts/utils.py (i think we're trying to implement email verification using otp)
 > commiting
+> add OneTimePassword model to accounts/models.py
+> update send_code_to_user function in accounts/utils.py
+> update user register view to use send_code_to_user after successful creation
+> (not sure about this, but think we need to specify an email backend) i'll set it to console
+> also, more email configs such as email host may need to be added later (not yet)
+> make and apply migrations
+> run server and make a post request to:
+http://localhost:8000/api/v1/auth/register/
+> everything seems be ok, register came back ok, email was printed in console, and otp is there
+> committing
