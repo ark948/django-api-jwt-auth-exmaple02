@@ -21,3 +21,14 @@ add apps to isntalled_apps: rest_framework, accounts, social_accounts, corsheade
 > start the dev server and navigate to admin page
 > use email instead of username to login with the superuser
 > commit (bug fix - typing error)
+> add serializers.py to accounts app
+> add user register serializer to accounts/serializers.py (no idea what this is)
+> add register view to accounts/views.py
+> add urls.py to accounts app and add register path to urlpatterns of it
+> link accounts/urls.py file in main urls.py file
+> update validate method of user register serializer
+> update create method of user register serializer
+> add utils.py to accounts
+> in accounts/utils.py, add generateOtp function (i think this will genereate a one time password)
+> add send_code_to_user function to accounts/utils.py (i think we're trying to implement email verification using otp)
+> commiting
