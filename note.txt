@@ -31,7 +31,7 @@ add apps to isntalled_apps: rest_framework, accounts, social_accounts, corsheade
 > add utils.py to accounts
 > in accounts/utils.py, add generateOtp function (i think this will genereate a one time password)
 > add send_code_to_user function to accounts/utils.py (i think we're trying to implement email verification using otp)
-> commiting
+> committing
 > add OneTimePassword model to accounts/models.py
 > update send_code_to_user function in accounts/utils.py
 > update user register view to use send_code_to_user after successful creation
@@ -72,4 +72,19 @@ http://localhost:8000/api/v1/auth/login/
 http://localhost:8000/api/v1/auth/profile/
 > tested it with httpie (OK) (first aquire the access token with login route)
 > (then put it in bearer auth header and send a get to route)
+> committing
+> vid3, add password reset request view to views.py
+> add password reset request serializer to serializers.py
+> add send normal email function to utils
+> add password reset confirm view to views.py
+> add set new password view (part of password reset feature) to views.py
+> add set new password serializer to serializers.py
+> add a url for password reset feature (3 views need urls)
+> use a registered user info to test the feature (first login to make sure user exists)
+testuser2@gmail.com - loop123* - loop1234*
+http://localhost:8000/api/v1/auth/password-reset/
+> email containing uidb64 and token is sent back to console, with the following url:
+http://localhost:8000/api/v1/auth/password-reset-confirm/< uidb64 is here>/< token is here >/
+> that uidb64 and token must be provided to the url below along with the new password we wish to set:
+http://localhost:8000/api/v1/auth/set-new-password/
 > committing
