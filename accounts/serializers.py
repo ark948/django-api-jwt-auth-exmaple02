@@ -86,14 +86,19 @@ class PasswordResetRequestSerializer(Serializer):
     def validate(self, attrs):
         email = attrs.get('email')
         if User.objects.filter(email=email).exists():
+            # try to to find the user using the provided email, if it exists:
             user = User.objects.get(email=email)
+            # get the user object
             uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
+            # generate an ecoded base64 string to use in urls, from bytestring or id
             token = PasswordResetTokenGenerator().make_token(user)
+            # a django built-in way of making tokens (specifically for password reset mechanism)
+
             request = self.context.get('request')
             site_domain = get_current_site(request).domain
             relative_link = reverse('password-reset-confirm', kwargs={'uidb64': uidb64, 'token': token})
             abslink = f'http://{site_domain}{relative_link}'
-            email_body = f'Hello, Please use the following link to reset your password \n {abslink}'
+            email_body = f'Hi, Please use the following link to reset your password \n {abslink}'
             data = {
                 'email_body': email_body,
                 'email_subject': "Reset your password.",
@@ -122,6 +127,7 @@ class SetNewPasswordSerializer(Serializer):
             confirm_password=attrs.get('confirm_password')
 
             user_id = force_str(urlsafe_base64_decode(uidb64))
+            # force_str similar to smart_str, converts byte string to regular strings
             user = User.objects.get(id=user_id)
             if not PasswordResetTokenGenerator().check_token(user, token):
                 raise AuthenticationFailed('Reset link is invalid or has expired.', 401)

@@ -102,6 +102,10 @@ class TestAuthenticationView(GenericAPIView):
 
 class PasswordResetRequestView(GenericAPIView):
     serializer_class = PasswordResetRequestSerializer
+    # just accepts an email from user
+    # if that email exists in database i.e. a user has registered using that email
+    # generate an encoded string containing that user's id
+    # and a token
 
     def post(self, request):
         serializer = self.serializer_class(
@@ -113,6 +117,8 @@ class PasswordResetRequestView(GenericAPIView):
 
 
 class PasswordResetConfirmView(GenericAPIView):
+    # used to provide uidb64 and token for user to aquire
+    # and send along to (SetNewPasswordView) to set a new password
     def get(self, request, uidb64, token):
         try:
             user_id = smart_str(urlsafe_base64_decode(uidb64))

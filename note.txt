@@ -73,6 +73,7 @@ http://localhost:8000/api/v1/auth/profile/
 > tested it with httpie (OK) (first aquire the access token with login route)
 > (then put it in bearer auth header and send a get to route)
 > committing
+- password reset feature
 > vid3, add password reset request view to views.py
 > add password reset request serializer to serializers.py
 > add send normal email function to utils
