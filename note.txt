@@ -107,3 +107,12 @@ http://localhost:8000/api/v1/auth/logout/
 > npm install react-router-dom@6.4.0 axios@1.1.3
 > make components folder in src
 > clean App.jsx
+> 01 App.jsx
+> 02 new component Signup.js
+> also new components: Login.js, VerifyEmail.js, Profile.js, ForgotPassword.js
+> 03 Signup.js and all other components
+- ERROR, Video mistake: rename all components from .js to .jsx
+> 04 index.js file
+> import all components in App.jsx and make routes for them
+> clear out and replace your own App.css
+> 
