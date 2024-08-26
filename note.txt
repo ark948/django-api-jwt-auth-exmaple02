@@ -118,3 +118,4 @@ http://localhost:8000/api/v1/auth/logout/
 > 05 complete html part of Signup component 05
 > in Signup.jsx we just created a simple form with register view fields
 > complete VerifyEmail component 06
+> fill in the Login component code 07
