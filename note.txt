@@ -117,3 +117,4 @@ http://localhost:8000/api/v1/auth/logout/
 > clear out and replace your own App.css (cannot be done)
 > 05 complete html part of Signup component 05
 > in Signup.jsx we just created a simple form with register view fields
+> complete VerifyEmail component 06
