@@ -1,42 +1,47 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.wrapper {
+  border: 2px solid darkgreen;
+  border-radius: 30px;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+div {
+  padding: 20px;;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label {
+  display: inline-block;
+  width: 100%;
+  margin-right: 20px;
+  text-align: left;
+  font-weight: bold;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input {
+  border: none;
+  border-bottom: 2px solid green;
+  width: 80%;
+  padding: 12px 20px;
 }
 
-.card {
-  padding: 2em;
+input:focus {
+  border-color: black;
+  border-bottom: none;
 }
 
-.read-the-docs {
-  color: #888;
+input[type="submit"] {
+  border: 2px solid;
+  border-radius: 10px;
+  width: 20em;
+  height: 3em;
+  background-color: white;
+  padding: 10px;
+  color: darkgreen;
+  font-weight: bold;
+  display: block;
+  margin: 30px 50px;
+}
+
+input[type="submit"]:focus {
+  border: 2px solid black;
 }

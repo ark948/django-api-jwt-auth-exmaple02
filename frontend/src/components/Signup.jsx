@@ -4,8 +4,8 @@ const Signup = () => {
     // 05
     return (
         <div>
-            <div>
-                <div>
+            <div className="form-container">
+                <div className="wrapper">
                     <h2>Create Account</h2>
                     <form>
                         <div className="form-group">
