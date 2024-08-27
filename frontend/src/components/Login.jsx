@@ -30,7 +30,15 @@ const Login = () => {
             console.log(response); 
             // if login was ok, access and refresh tokens will be returned
             setIsLoading(false)
+            const user = {
+                "email": response.email,
+                "names": response.full_name
+            };
             if (res.status === 200) {
+                localStorage.setItem("user", JSON.stringify(user))
+                localStorage.setItem('access', JSON.stringify(response.access_token))
+                localStorage.setItem('refresh', JSON.stringify(response.refresh_tokne))
+                navigate("/profile")
                 toast.success("login successful");
             }
         }
