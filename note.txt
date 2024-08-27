@@ -136,3 +136,6 @@ testuser01@gmail.com-al-keb-lol123 (otp: 544688)
 > later a mechanism can be implemented to actually check for the complexity of password
 > and prevent submission of form is not all complexity checks are green
 > adding the frontend code for login #10
+> upon successful login, we must be provided with access_token and refresh_token
+> need a new user, testuser10@gmail.com-jay-ko-shit123*-642975
+> everything is ok so far, register ok, verify email otp ok, login ok
