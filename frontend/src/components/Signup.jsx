@@ -13,17 +13,23 @@ const Signup = () => {
 
     const handleChange = (e) => {
         setFormData({...formdata, [e.target.name]: e.target.value})
+        // upon value change of any of the stated variables
+        // destructure everything with its corresponding name field
+        // e.g. setFormData(formdata['email']='email'.target.value)
     };
 
     const {email, first_name, last_name, password, password2} = formdata;
+    // get all the values from formdata (using destructuring) ...
+    // so they can be accessed in handleSubmit function
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!email || !first_name || !last_name || !password || !password2) {
             // if any of the fields was not provided, throw error
             setError("All fields are required.");
+        } else {
+            console.log(formdata);
         }
-        console.log(formdata);
     }
 
     
