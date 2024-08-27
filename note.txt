@@ -126,3 +126,7 @@ http://localhost:8000/api/v1/auth/logout/
 > add cors_allowed_hosts to backend settings.py
 testuser01@gmail.com-al-keb-lol123 (otp: 544688)
 > signup frontend is done and ok
+> next, VerifyEmail component code 09
+> register a new user
+> verify email in frontend is done and working
+> although some erros are thrown sometimes (404 and 400)
