@@ -141,3 +141,6 @@ testuser01@gmail.com-al-keb-lol123 (otp: 544688)
 > everything is ok so far, register ok, verify email otp ok, login ok
 > now that we got the access and refresh_token, we must save it in either...
 > cookies or localStorage (convert to json before setting to localStorage)
+> after saving access and refresh_token, we can navigate to a protected route such as profile
+> adding profile component code #11
+> profile component complete
