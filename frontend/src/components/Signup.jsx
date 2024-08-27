@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
+    const navigate = useNavigate();
     const [formdata, setFormData] = useState({
         email:"",
         first_name:"",
@@ -22,16 +26,25 @@ const Signup = () => {
     // get all the values from formdata (using destructuring) ...
     // so they can be accessed in handleSubmit function
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!email || !first_name || !last_name || !password || !password2) {
             // if any of the fields was not provided, throw error
             setError("All fields are required.");
         } else {
             console.log(formdata);
+            // make call to api
+            const res = await axios.post("http://127.0.0.1:8000/api/v1/auth/register/", formdata);
+            // check response
+            const response = res.data;
+            console.log(response);
+            if (res.status === 201) {
+                // redirect to verifyemail component
+                navigate("/otp/verify");
+                toast.success(response.message);
+            }
         }
     }
-
     
     return (
         // 05
@@ -39,8 +52,8 @@ const Signup = () => {
             <div className="form-container">
                 <div className="wrapper">
                     <h2>Create Account</h2>
-                    <p style={{color: "red", padding:'1px'}}>{error ? error : ""}</p>
                     <form onSubmit={handleSubmit}>
+                    <p style={{color: "red", padding:'1px'}}>{error ? error : ""}</p>
                         <div className="form-group">
                             <label htmlFor="">Email Address:</label>
                             <input type="text" className="email-form" name="email" value={email} onChange={handleChange} />
