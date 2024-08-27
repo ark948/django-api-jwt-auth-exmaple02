@@ -130,3 +130,9 @@ testuser01@gmail.com-al-keb-lol123 (otp: 544688)
 > register a new user
 > verify email in frontend is done and working
 > although some erros are thrown sometimes (404 and 400)
+> let's try another time, testuser08@gmail.com-vim-la-123
+> 400 error was raised (i think it's related to complexity of password)
+> for now, i will just add a message to notification to ask the user for a complex password
+> later a mechanism can be implemented to actually check for the complexity of password
+> and prevent submission of form is not all complexity checks are green
+> adding the frontend code for login #10

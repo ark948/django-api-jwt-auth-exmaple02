@@ -16,6 +16,8 @@ const VerifyEmail = () => {
             if (response.status === 200) {
                 navigate("/login");
                 toast.success(response.data.message);
+            } else {
+                toast.error(response.data.message);
             }
         }
     }

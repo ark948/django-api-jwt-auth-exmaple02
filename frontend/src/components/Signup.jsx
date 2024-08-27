@@ -42,6 +42,8 @@ const Signup = () => {
                 // redirect to verifyemail component
                 navigate("/otp/verify");
                 toast.success(response.message);
+            } else {
+                toast.error(response.message);
             }
         }
     }
