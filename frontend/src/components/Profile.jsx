@@ -26,7 +26,7 @@ const Profile = () => {
     const refresh = JSON.parse(localStorage.getItem('refresh'));
 
     const getSomeData = async () => {
-        const resp = await axiosInstance.get('/auth/profile');
+        const resp = await axiosInstance.get('/auth/profile/ ');
         if (resp.status === 200) {
             console.log(resp.data);
         }
@@ -34,7 +34,7 @@ const Profile = () => {
 
     const handleLogout = async () => {
         const res = await axiosInstance.post("/auth/logout/", {"refresh_token": refresh})
-        if (res.status === 204) {
+        if (res.status === 200) {
             localStorage.removeItem('access');
             localStorage.removeItem('refresh');
             localStorage.removeItem('user');
