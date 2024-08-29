@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Signup, Login, Profile, VerifyEmail, ForgotPassword } from './components'
+import { Signup, Login, Profile, VerifyEmail, ForgetPassword, ResetPassword } from './components'
 
 import './App.css'
 
@@ -29,7 +29,8 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/dashboard' element={<Profile />} />
               <Route path='/otp/verify' element={<VerifyEmail />} />
-              <Route path='/forgot_password' element={<ForgotPassword />} />
+              <Route path='/forget_password' element={<ForgetPassword />} />
+              <Route path='/password-reset-confirm/:uid/:token' element={<ResetPassword />} />
           </Routes>
       </Router>
     </>

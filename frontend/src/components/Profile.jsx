@@ -26,9 +26,11 @@ const Profile = () => {
     const refresh = JSON.parse(localStorage.getItem('refresh'));
 
     const getSomeData = async () => {
-        const resp = await axiosInstance.get('/auth/profile/ ');
+        const resp = await axiosInstance.get('/auth/profile/');
         if (resp.status === 200) {
             console.log(resp.data);
+        } else {
+            console.log("[Profile.jsx]: Error in getSomeData.");
         }
     }
 
@@ -40,6 +42,8 @@ const Profile = () => {
             localStorage.removeItem('user');
             navigate("/login");
             toast.success('logout successful');
+        } else {
+            console.log("[Profile.jsx]: Error in handleLogut.");
         }
     }
 

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     // 10
@@ -63,6 +63,7 @@ const Login = () => {
                             <input type="password" className="email-form" name="password" value={logindata.password} onChange={handleOnChange} />
                         </div>
                         <input type="submit" value="Login" className="submitButton" />
+                        <p className="pass-link"><Link to={'/forget_password'}>Forgot password?</Link></p>
                     </form>
                 </div>
             </div>

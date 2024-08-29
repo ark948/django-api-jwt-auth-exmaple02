@@ -154,7 +154,14 @@ testuser01@gmail.com-al-keb-lol123 (otp: 544688)
 > try to access TestTokenAuthentication view from frontend (in profile page)
 backend error: CORS_ALLOW_ALL_ORIGINS should be a bool
 > typo found CORS_ALLOW_ALL_ORIGINS must be CORS_ALLOWED_ORIGINS
-> login works but with errors. committing for now...
+> login works but with errors. committing for now... [THIS WAS ERROR IN VIDEO]
 > adding axios interceptors to axiosInstance.js
 > need to install jwt-decode package with npm, also install dayjs
 > add token refresh view to backend accounts urls.py
+> adding password reset feature
+> start with completing the code for ForgotPassword.jsx
+> rename ForgotPassword to ForgetPassword.jsx and all the links as well
+> add a new component ResetPassword.jsx
+> [ERROR WAS FIXED in vid6 in password reset feature]
+shit541*
+shit771*
